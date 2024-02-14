@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Calculadora IMC</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Formulario cálculo Indice Masa Corporal (IMC)</h1>
+	<h3>Resultado</h3>
+    <p th:text="'IMC: ' + ${masa}" />
+    <p th:text="'Clasificación: ' + ${clasif}" />
+    <a href="/formPrueba">Enviar nuevos datos.</a>
+</body>
+</html>

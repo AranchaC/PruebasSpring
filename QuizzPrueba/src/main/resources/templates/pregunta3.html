@@ -1,0 +1,97 @@
+<!-- pregunta4.html -->
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 3</title>
+</head>
+<body>
+
+<h2>Pregunta 3: 
+<br> 
+Dada la opción, preferirías inventar una poción que garantizara:</h2>
+
+<img src="/images/img4.jpg" alt="" width="450">
+
+<form method="post" action="/pregunta3">
+    <button type="submit" name="respuesta" value="verde">Amor</button>
+    <button type="submit" name="respuesta" value="morado">Gloria</button>
+    <button type="submit" name="respuesta" value="azul">Sabiduría</button>
+    <button type="submit" name="respuesta" value="rojo">Poder</button>
+<br><br>
+
+<!-- al ser de tipo Button, no hace falta botón enviar.
+    <input class="boton" type="submit" value="Siguiente">
+ -->   
+    <p th:text="'Llevas ' + ${resultado.puntos} + ' puntos.'" /p>
+</form>
+
+    <style>
+				* {
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    margin: 0;
+		}
+		
+        /* Estilo CSS para hacer el botón más grande */
+        button {
+			padding: 5px 15px;
+			margin-right: 5px;
+			font-size: 15px;
+			font-weight: bold;
+		}
+		
+		button:hover {
+			background-color: rgb(0, 64, 0);
+			color: white;
+		}
+		
+		img {
+			border-radius: 8px;
+			box-shadow: 0 0 20px rgba(255, 255, 255, 2);
+		}
+		
+		body {
+			background-image: url('/images/fondo3.jpg');
+	        background-size: 100% 100%;
+	        background-repeat: no-repeat;
+	        height: 100vh;
+	        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            margin: 0;
+            padding: 0px 35px;
+        }
+        
+        h2 {
+			text-align: center;
+			color: white;
+			text-shadow: 0 0 5px black ;	
+		}
+		
+        form {
+            background-color: rgb(255, 155, 255);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 2);
+            padding: 20px;
+            width: 450px;
+            max-width: 100%;
+            font-weight: bold;
+            text-align: center;
+        }    
+
+        input[type="submit"]:hover {
+            background-color: rgb(0, 64, 0);
+        }
+        
+		p {
+			text-align: left;
+		}
+    </style>
+
+</body>
+</html>

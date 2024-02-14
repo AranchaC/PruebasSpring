@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Calculadora IMC</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Formulario cálculo Indice Masa Corporal (IMC)</h1>
+	<h3>Introduce tus datos:</h3>
+    <form action="#" th:action="@{/formPrueba}" th:object="${datos}" method="post">
+        <p>Altura: <input type="text" th:field="*{altura}" /></p>
+        <p th:if="${#fields.hasErrors('altura')}"
+        	th:errors="*{altura}">Altura Error</p>
+        <p>Peso: <input type="text" th:field="*{peso}" /></p>
+        <p th:if="${#fields.hasErrors('peso')}"
+        	th:errors="*{peso}">Peso Error</p>
+        <p><input type="submit" value="Calcular IMC" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>

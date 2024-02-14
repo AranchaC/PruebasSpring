@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Quiz</title>
+</head>
+<body>
+
+<h2>¡Quiz Finalizado!</h2>
+<p th:text="'Has sido seleccionado para la casa  ' + ${resultado.categoria} + 
+	' y has conseguido ' + ${resultado.puntos} + ' puntos.'" /p>
+    
+<!-- Verificar si resultado y resultado.clasificacion no son nulos -->
+<div th:if="${resultado != null and resultado.categoria != null}">
+    <!-- Condición para mostrar imágenes según la clasificación -->
+    <img th:if="${resultado.categoria.toString() == 'ROJO'}" src="/images/gryf.jpg" width="350" />
+    <img th:if="${resultado.categoria.toString() == 'VERDE'}" src="/images/raven.jpg" width="350"/>
+    <img th:if="${resultado.categoria.toString() == 'AZUL'}" src="/images/slyth.jpg" width="350" />
+    <img th:if="${resultado.categoria.toString() == 'MORADO'}" src="/images/huff.jpg" width="350" />
+	
+</div>
+
+<a th:href="@{/}"><button class="botonIniciar">Volver a empezar</button></a>
+
+
+<style>
+			* {
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    margin: 0;
+		}
+	
+		body {
+			background-image: url('/images/fondo.jpg');
+	        background-size: 100% 100%;
+	        background-repeat: no-repeat;
+	        height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px;
+        }
+        
+        img {
+			box-shadow: 0 0 20px rgba(255, 255, 255, 2);
+		}
+		
+		p {
+			color: white;
+			font-weight: bold;
+			font-size: larger;
+			text-shadow: 0 0 5px black ;		
+		}
+		
+		h2, h3 {
+			color: white;
+			font-weight: bold;
+			text-shadow: 0 0 5px black ;	
+		}
+		
+		table {
+	        width: 30%;
+	        border-collapse: collapse;
+	        background-color: white;
+	        box-shadow: 0 0 20px rgba(255, 255, 255, 2);
+  		}
+
+	    th, td {
+	        padding: 10px;
+	        text-align: center;
+	    }
+	
+	    th {
+	        background-color: #4caf50;
+	        color: white;
+	    }
+	
+	    tr:nth-child(even) {
+	        background-color: #f2f2f2;
+	    }
+	    
+	    .botonIniciar {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+			font-weight: bold;
+        }
+
+        .botonIniciar:hover {
+            background-color: rgb(0, 64, 0);
+        }
+        
+</style>
+
+</body>
+</html>
